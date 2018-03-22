@@ -1,29 +1,11 @@
-from alumno import Alumnos
-
-a = Alumnos()
-
-a.AgregarMateria("Matematica")
-a.AgregarMateria("Laboratorio")
-a.AgregarMateria("Lengua")
+from empresa import Empresa
 
 
-a.AgregarNota_a_Materia("Matematica",6)
-a.AgregarNota_a_Materia("Matematica",4)
-a.AgregarNota_a_Materia("Matematica",8)
+Unaempr = Empresa()
+Unemp = Empleado()
+Unemp.nombre = 'Pepe'
+Unemp.apellido = 'Snow'
+Unemp.fecha_nacimiento = datetime(1995,10,24)
+Unemp.telefono = '1234-1234'
 
-a.AgregarNota_a_Materia("Laboratorio",7)
-a.AgregarNota_a_Materia("Laboratorio",7)
-a.AgregarNota_a_Materia("Laboratorio",7)
-
-a.AgregarNota_a_Materia("Lengua",5)
-a.AgregarNota_a_Materia("Lengua",5)
-a.AgregarNota_a_Materia("Lengua",5)
-
-
-
-print(a.PromedioMateria("Matematica"))
-print(a.PromedioMateria("Laboratorio"))
-print(a.PromedioMateria("Lengua"))
-
-print(a.PromedioGeneral())
-
+Unaempr.agregarEmpleadoALista(Unemp)
