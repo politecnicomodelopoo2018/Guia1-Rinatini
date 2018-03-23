@@ -25,7 +25,6 @@ class Empleado(object):
 
                 for item in self.lista_asistencia:
 
-                    #if fecha == self.lista_asistencia[dia_que_tiene_que_ir]:
                     if fecha == item:
                         dias_que_fue += 1
                         break
