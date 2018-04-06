@@ -8,12 +8,10 @@ class Personas(object):
         self.nombre = nomb
         self.fecha_Nacimiento = fecha
 
-        PlatosComidos = []
+        self.PlatosComidos = []
 
-    def agregarPlatoAPersona(self, nomPlato):
-        unPlato = Platos(nomPlato)
-
-        self.PlatosComidos.append(unPlato)
+    def agregarPlatoAPersona(self, UnPlato):
+        self.PlatosComidos.append(UnPlato)
 
     def CaloriasConsumidas(self):
         sumaCalorias = 0

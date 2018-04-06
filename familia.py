@@ -4,35 +4,37 @@ from personas import Personas
 class Familia (object):
 
     def __init__(self):
-        listaPersonas = []
+        self.listaPersonas = []
 
-    def agregarPersona(self, nombrePersona):
-        unaPers = Personas(nombrePersona)
-        self.listaPersonas.append(unaPers)
+    def agregarPersona(self, UnaPersona):
+        self.listaPersonas.append(UnaPersona)
 
     def PromedioCaloriasFamilia(self):
         CaloriasTotalesFamilia = 0
 
         for persona in self.listaPersonas:
-            CaloriasTotalesFamilia += persona.CaloriasConsumidas
+            CaloriasTotalesFamilia += persona.CaloriasConsumidas()
 
         PromedioCaloriasFamilia = CaloriasTotalesFamilia / len(self.listaPersonas)
 
-    def MenorPersonaConCalorias(self):
+        return PromedioCaloriasFamilia
+
+    def MayorPersonaConCalorias(self):
         mayor = 0
 
         for persona in self.listaPersonas:
-            if persona.CaloriasConsumidas > mayor:
-                mayor = persona.CaloriasConsumidas
+            if persona.CaloriasConsumidas() > mayor:
+                mayor = persona.CaloriasConsumidas()
+                nombrePersonaMasGorda = persona.nombre
 
-        return mayor
+        return nombrePersonaMasGorda
 
-    def MayorPersonaConCalorias(self):
-        menor = 1000000
+    def MenorPersonaConCalorias(self):
+        menor = 10000
 
         for persona in self.listaPersonas:
-            if persona.CaloriasConsumidas < menor:
-                menor = persona.CaloriasConsumidas
+            if persona.CaloriasConsumidas() < menor:
+                menor = persona.CaloriasConsumidas()
+                nombrePersona = persona.nombre
 
-
-        return menor
+        return nombrePersona
